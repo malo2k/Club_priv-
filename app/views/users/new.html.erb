@@ -1,0 +1,31 @@
+<% provide(:title, "Sign up") %>
+<h1>Sign Up</h1>
+
+<!-- Helper form_for-->
+	<%= form_for @user do |f| %>
+
+		<%= render 'shared/error_messages' %>
+		<div class="form-group">
+			<%= f.label :first_name %>  <!-- , class: "sr-only"", -->
+			<%= f.text_field :first_name, class: "form-control", placeholder:"Ton prénom"%>
+		</div>
+		<div class="form-group">
+			<%= f.label :last_name %>  <!-- , class: "sr-only"", -->
+			<%= f.text_field :last_name, class: "form-control", placeholder:"Ton nom"%>
+		</div>		
+		<div class="form-group">	
+			<%= f.label :email%>
+			<%= f.email_field :email, class: "form-control", placeholder: "ton.email@example.com" %>		<!-- f.email_field ; type: "email", -->
+		</div>
+		<div class="form-group">
+			<%= f.label :password, "Min. 10 characters"%>
+			<%= f.password_field :password, class: "form-control", placeholder: "Mot de passe" %>	<!-- f.password_field ; type: "password",-->
+		</div>
+		<div class="form-group">
+			<%= f.label :password_confirmation, "Confirmation" %>
+	      	<%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirmer mot de passe" %>
+      	</div>
+		<div class="actions"> 
+			<%= f.submit "Create", class: "btn btn-primary" %>
+		</div>
+	<% end %>

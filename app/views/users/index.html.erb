@@ -1,0 +1,16 @@
+<h1>Users#index</h1>
+<p>Find me in app/views/users/index.html.erb</p>
+
+<% @users.each.with_index do |user,ind| %>
+	<div class="card">
+    	<div class="card-body">
+        	<h5 class="card-title">
+        		User: <%= user.first_name %> <%= user.last_name %>
+        	</h5>
+        	<h6 class="card-subtitle mb-2 text-muted">
+        		Email: <%= user.email %>
+        	</h6>
+          	<a href= <%= user_path(user.id) %> class ="card-link">More...</a>
+    	</div>
+	</div>
+<% end %>  

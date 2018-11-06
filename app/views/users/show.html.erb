@@ -1,0 +1,24 @@
+<% provide(:title, @user.first_name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+		<h1>
+		  <%= @user.first_name %>
+		</h1>
+    </section>
+  </aside>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    User: <%= @user.first_name %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Email: <%= @user.email %></h5>
+    <p class="card-text">Utilisateur.</p>
+    <a href= <%= edit_user_path(@user.id) %> class="btn btn-info">
+    	Edit
+    </a>
+    <%= link_to 'Clique pour détruire', @user, method: :delete, class:"btn btn-danger" %>
+  </div>
+</div>
